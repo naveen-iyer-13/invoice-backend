@@ -17,7 +17,14 @@ app.use((req, res, next) => {
   next();
 });
 
-mongoose.connect('mongodb://heroku_14l605nz:hidm5s0efd4t0uq2v17659ha8q@ds155288.mlab.com:55288/heroku_14l605nz');
+
+mongoose.connect('mongodb://invoice:invoice@ds155288.mlab.com:55288/heroku_14l605nz');
+
+mongoose.Promise = global.Promise
+
+var db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'Mongo connection error'))
 
 app.post('/invoice', (req, res) => {
   console.log('==================================');
