@@ -20,6 +20,7 @@ app.use((req, res, next) => {
 mongoose.connect('mongodb://heroku_shb2j0l7:j4pshiosln3lk0fng30tdad1ms@ds153978.mlab.com:53978/heroku_shb2j0l7');
 
 app.post('/invoice', (req, res) => {
+  console.log('==================================');
   var count = 0
   invoice.find((err, invoices) => {
     if (err) {
