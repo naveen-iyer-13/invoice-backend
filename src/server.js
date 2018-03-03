@@ -17,7 +17,7 @@ app.use((req, res, next) => {
   next();
 });
 
-mongoose.connect('mongodb://naveeniyer13:Federation123@ds141068.mlab.com:41068/invoices');
+mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds153958.mlab.com:53958/heroku_ffxzmfpg');
 
 app.post('/invoice', (req, res) => {
   console.log('==================================');
