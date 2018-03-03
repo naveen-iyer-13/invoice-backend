@@ -11,13 +11,13 @@ app.use(bodyParser.json());
 var port = process.env.PORT || 8090;
 // var router = express.Router();
 
-// app.use((req, res, next) => {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//   next();
-// });
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
-mongoose.connect('mongodb://heroku_shb2j0l7:j4pshiosln3lk0fng30tdad1ms@ds153978.mlab.com:53978/heroku_shb2j0l7');
+mongoose.connect('mongodb://naveeniyer13:Federation123@ds141068.mlab.com:41068/invoices');
 
 app.post('/invoice', (req, res) => {
   console.log('==================================');
