@@ -66,6 +66,11 @@ app.get('/invoices', (req, res) => {
     });
 })
 
+app.get('/test', (req, res) => {
+  res.send('Fuck you')
+})
+
+
 app.use(cors());
 app.listen(port);
 console.log('REST API is runnning at ' + port);
