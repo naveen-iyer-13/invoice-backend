@@ -27,7 +27,6 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Mongo connection error'))
 
 app.post('/invoice', (req, res) => {
-  console.log('==================================');
   var count = 0
   invoice.find((err, invoices) => {
     if (err) {
@@ -71,10 +70,6 @@ app.get('/invoices', (req, res) => {
         }
         res.send(invoices);
     });
-})
-
-app.get('/test', (req, res) => {
-  res.send('Fuck you')
 })
 
 
